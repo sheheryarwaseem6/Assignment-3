@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>PKR TO USD CONVERTER</h1>
+    <br>
+    <br>
+    Enter USD <input type="number" id="usd" value="0">
+    <br>
+    Enter PKR <input type="number" id="pkr" value="0">
+    <br>
+    <button onclick="converter()">Convert</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <hr>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1>Should i Carry Jacket?</h1>
+    <br><br>
+    Enter Current Temperature: <input type="number" id="temp">
+    <br>
+    <button onclick="check()">Check</button>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <hr>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1>Check your Percentage & Grades</h1>
+    <br>
+    <br>
+    Enter your Obtained Marks: <input type="number" id="obtMark"> 
+    <br>
+    Enter your Total Marks: <input type="number" id="totMark"> 
+    <br>
+    check Percentage & Grade: <button onclick="gradeChecker()">Check Result</button>
+
+
+
+
+
+    <script>
+        function converter(){
+            var rate = 170
+            var usd = Number(document.getElementById("usd").value)
+            var pkr = Number(document.getElementById("pkr").value)
+
+            if(usd === 0 && pkr === 0){
+                alert ("please write amount in PKR or USD")
+
+            }
+            else if(usd != 0 && pkr != 0){
+                alert("Please write anyone PKR or USD")
+
+            }
+            else if (usd === 0 ){
+                var toUsd = pkr / rate
+                alert( toUsd )
+            }
+            else if (pkr === 0){
+                var toPkr = usd * rate
+                alert( toPkr )
+            }
+
+
+
+        }
+
+        function check(){
+            var temp = Number(document.getElementById("temp").value)
+            if(temp <= 24 && temp >=10){
+                alert ("Carry Jacket Bruh!")
+
+            }
+            else if(temp <= 9 && temp >= 1 ){
+                alert("Carry Coat and Jacket Both!")
+            }
+            else if(temp <= 49 && temp >= 25 ){
+                alert("Dnot Carry Jacket or Coat!")
+            }
+            else if(temp > 49 || temp <=0 ){
+                alert("Dnot go outside! its too hot or may be too cold")
+            }
+        }
+
+
+        function gradeChecker(){
+            var obtMark = Number(document.getElementById("obtMark").value)
+            var totMark = Number(document.getElementById("totMark").value)
+
+            var percentage = Number((obtMark / totMark)* 100)
+
+            if(percentage >= 80 && percentage <= 100){
+                alert("your percentage is "+ percentage +" Congatulations Amazing Your Grade is A1.")
+            }
+            else if(percentage >= 70 && percentage <= 79){
+                alert("your percentage is "+ percentage +" Excellent Your Grade is A.")
+            }
+            else if(percentage >= 60 && percentage <= 69){
+                alert("your percentage is "+ percentage +" Best Your Grade is B.")
+            }
+            else if(percentage >= 50 && percentage <= 59){
+                alert("your percentage is "+ percentage +" Better Your Grade is C.")
+            }
+            else if(percentage >= 40 && percentage <= 49){
+                alert("your percentage is "+ percentage +" Good Your Grade is D.")
+            }
+            else if(percentage >= 0 && percentage <= 39){
+                alert("your percentage is "+ percentage +" You're Failed!.")
+            }
+            else{
+                alert("Enter Correct Marks")
+            }
+        }
+    </script>
+    
+</body>
+</html>
